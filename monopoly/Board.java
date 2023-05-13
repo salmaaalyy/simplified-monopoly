@@ -1,128 +1,86 @@
 package monopoly;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Board 
-{
-	public ArrayList<BoardPiece> board = new ArrayList <>();
-	
+/**
+ * Represents the game board in Monopoly.
+ */
+public class Board {
+	public List<BoardPiece> board; // List of board pieces
+
+	/**
+	 * Constructs a Board object and initializes the board.
+	 */
 	public Board() {
+		board = new ArrayList<>();
 		addComunityChests();
 		addProperties();
 	}
 
-	public void addComunityChests() 
-	{
-		BoardPiece cc1 = new BoardPiece();
-		cc1.setName("Community Chest");
-		cc1.setType("Community Chest");
-		cc1.setAction("Maintenance fees, pay $150");
-		cc1.setPrice(200);
-		board.add(cc1);
-		
-		BoardPiece cc2 = new BoardPiece();
-		cc2.setName("Community Chest");
-		cc2.setType("Community Chest");
-		cc2.setAction("School fees, pay $75");
-		cc2.setPrice(100);
-		board.add(cc2);		
-		
-		BoardPiece cc3 = new BoardPiece();
-		cc3.setName("Community Chest");
-		cc3.setType("Community Chest");
-		cc3.setAction("Hospital bills, pay $200");
-		cc3.setPrice(500);
-		board.add(cc3);		
+	// Adds community chest board pieces to the board.
+	private void addComunityChests() {
+		BoardPiece bp1 = new BoardPiece("Maintenance fees", "Maintenance fees, pay $150", 150);
+		board.add(bp1);
+
+		BoardPiece bp2 = new BoardPiece("School fees", "School ain't cheap, pay $100.", 100);
+		board.add(bp2);
+
+		BoardPiece bp3 = new BoardPiece("Hospital bills", "Oh no, you just received your hospital bill. Pay $200", 200);
+		board.add(bp3);
+
+		BoardPiece bp4 = new BoardPiece("Credit card fees", "You maxed out your credit card, pay $250", 250);
+		board.add(bp4);
+
+		BoardPiece bp5 = new BoardPiece("Income tax", "Tax the rich. Pay $500", 500);
+		board.add(bp5);
 	}
-	public void addProperties() 
-	{
-		Property boardwalk = new Property();
-		boardwalk.setName("Boardwalk");
-		boardwalk.setType("property");
-		boardwalk.setPrice(400);
-		boardwalk.setRent(200);
-		boardwalk.setAction("Buy " + boardwalk.getName() + " for $" + boardwalk.getPrice() +". Rent is $" + boardwalk.getRent());
+
+	// Adds property board pieces to the board.
+	private void addProperties() {
+		BoardPiece boardwalk = new Property("Boardwalk", 400, 200);
 		board.add(boardwalk);
-		
-		Property baltic = new Property();
-		baltic.setName("Baltic Avenue");
-		baltic.setType("property");
-		baltic.setPrice(60);
-		baltic.setRent(30);
-		baltic.setAction("Buy " + baltic.getName() + " for $" + baltic.getPrice() +". Rent is $" + baltic.getRent());
+
+		BoardPiece baltic = new Property("Baltic Avenue", 60, 30);
 		board.add(baltic);
-		
-		Property nc = new Property();
-		nc.setName("North Carolina Avenue");
-		nc.setType("property");
-		nc.setPrice(300);
-		nc.setRent(150);
-		nc.setAction("Buy " + nc.getName() + " for $" + nc.getPrice() +". Rent is $" + nc.getRent());
+
+		BoardPiece nc = new Property("North Carolina Avenue", 300, 150);
 		board.add(nc);
-		
-		Property marvin = new Property();
-		marvin.setType("property");
-		marvin.setName("Marvin Gardens");
-		marvin.setPrice(280);
-		marvin.setRent(140);
-		marvin.setAction("Buy " + marvin.getName() + " for $" + marvin.getPrice() +". Rent is $" + marvin.getRent());
+
+		BoardPiece marvin = new Property("Marvin Gardens", 280, 140);
 		board.add(marvin);
-		
-		Property states = new Property();
-		states.setType("property");
-		states.setName("States Avenue");
-		states.setPrice(140);
-		states.setRent(70);
-		states.setAction("Buy " + states.getName() + " for $" + states.getPrice() +". Rent is $" + states.getRent());
+
+		BoardPiece states = new Property("States Avenue", 140, 70);
 		board.add(states);
-		
-		Property kentucky = new Property();
-		kentucky.setType("property");
-		kentucky.setName("Kentucky Avenue");
-		kentucky.setPrice(400);
-		kentucky.setRent(200);
-		kentucky.setAction("Buy " + kentucky.getName() + " for $" + kentucky.getPrice() +". Rent is $" + kentucky.getRent());
+
+		BoardPiece kentucky = new Property("Kentucky Avenue", 400, 200);
 		board.add(kentucky);
-		
-		Property vermont = new Property();
-		vermont.setType("property");
-		vermont.setName("Vermont Avenue");
-		vermont.setPrice(100);
-		vermont.setRent(50);
-		vermont.setAction("Buy " + vermont.getName() + " for $" + vermont.getPrice() +". Rent is $" + vermont.getRent());
+
+		BoardPiece vermont = new Property("Vermont Avenue", 100, 50);
 		board.add(vermont);
-		
-		Property ny = new Property();
-		ny.setType("property");
-		ny.setName("New York Avenue");
-		ny.setPrice(200);
-		ny.setRent(100);
-		ny.setAction("Buy " + ny.getName() + " for $" + ny.getPrice() +". Rent is $" + ny.getRent());
+
+		BoardPiece ny = new Property("New York Avenue", 200, 100);
 		board.add(ny);
-		
-		Property atlantic = new Property();
-		atlantic.setType("property");
-		atlantic.setName("Atlantic Avenue");
-		atlantic.setPrice(260);
-		atlantic.setRent(130);
-		atlantic.setAction("Buy " + atlantic.getName() + " for $" + atlantic.getPrice() + ". Rent is $" + atlantic.getRent());
+
+		BoardPiece atlantic = new Property("Atlantic Avenue", 260, 130);
 		board.add(atlantic);
-		
-		Property oriental = new Property();
-		oriental.setType("property");
-		oriental.setName("Oriental Avenue");
-		oriental.setPrice(100);
-		oriental.setRent(50);
-		oriental.setAction("Buy " + atlantic.getName() + " for $" + atlantic.getPrice() + ". Rent is $" + atlantic.getRent());
-		board.add(oriental);		
+
+		BoardPiece oriental = new Property("Oriental Avenue", 100, 50);
+		board.add(oriental);
+
+		BoardPiece indiana = new Property("Indiana Avenue", 80, 20);
+		board.add(indiana);
+
+		BoardPiece virgina = new Property("Virgina Avenue", 150, 80);
+		board.add(virgina);
 	}
-	public ArrayList<BoardPiece> getBoard()
-	{
-		return board;
-	}
-	public BoardPiece getBoard(int pos) 
-	{
+
+	/**
+	 * Returns the board piece at the specified position.
+	 * @param pos The position of the board piece.
+	 * @return The board piece at the specified position.
+	 */
+	public BoardPiece getBoard(int pos) {
 		return board.get(pos);
 	}
 }
- 
