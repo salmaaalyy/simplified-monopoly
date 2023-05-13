@@ -1,3 +1,4 @@
-# simplified-monopoly
-a game of simplified monopoly where you can play against one other person!<img width="774" alt="Screen Shot 2021-08-23 at 9 34 44 PM" src="https://user-images.githubusercontent.com/84868923/132082952-e04a56d3-9f16-413f-8e8d-4ca933c5e640.png">
-<img width="1100" alt="Screen Shot 2021-08-23 at 9 28 37 PM" src="https://user-images.githubusercontent.com/84868923/132082954-8bd1bb6b-7f3d-449c-add7-2378ecf9afd4.png">
+# Simplified Monopoly
+A game of simplified monopoly where you can play against one other person!
+<img width="1029" alt="Screenshot 2023-05-12 at 10 35 21 PM" src="https://github.com/salmaaalyy/simplified-monopoly/assets/84868923/2f033660-a89d-437c-8599-adf5ad30e03e">
+<img width="790" alt="Screenshot 2023-05-12 at 10 35 59 PM" src="https://github.com/salmaaalyy/simplified-monopoly/assets/84868923/73af426d-d650-4054-b7b8-8c42a2f0a51c">
